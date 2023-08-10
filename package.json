@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "generate": "nuxt generate",
+    "build:local": "cross-env-shell APP_ENV=local nuxt build",
+    "build:dev": "cross-env-shell APP_ENV=dev nuxt build",
+    "build:prod": "cross-env-shell APP_ENV=prod nuxt build",
+    "deploy:local": "yarn build:local && pm2 startOrRestart pm2.local.config.js --env local",
+    "deploy:dev": "yarn build:dev && pm2 startOrRestart pm2.dev.config.js --env dev",
+    "deploy:prod": "yarn build:prod && pm2 startOrRestart pm2.production.config.js --env prod"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.1.4",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.0",
+    "@mui/material": "^5.14.2",
+    "@mui/x-data-grid": "^6.10.0",
+    "@nextui-org/react": "^1.0.0-beta.13",
+    "antd": "^5.7.0",
+    "axios": "^1.4.0",
+    "bcryptjs": "^2.4.3",
+    "cookie": "^0.5.0",
+    "jsonwebtoken": "^9.0.1",
+    "mui": "^0.0.1",
+    "mui-datatables": "^4.3.0",
+    "next": "latest",
+    "pm2": "^4.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.1",
+    "react-table": "^7.8.0",
+    "reactjs-bottom-navigation": "^2.0.5",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.26",
+    "tailwindcss": "^3.3.3"
+  }
+}
